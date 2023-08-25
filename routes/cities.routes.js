@@ -11,4 +11,16 @@ router.get("/", async (req, res, next) => {
 	}
   });
 
+  router.get("/:cityId", (req, res, next) => {
+    const cityId = req.params.cityId;
+  City.findById(cityId)
+    .then((targetCity) => {
+      console.log(targetCity);
+      res.status(200).json(targetCity);
+    })
+    .catch((error) => {
+      next(error)
+    });
+});
+
   module.exports = router;

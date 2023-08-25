@@ -6,7 +6,9 @@ const citiesSchema = new Schema(
    name: String,
    img: String,
    description: String,
-   label: String
+   label: String,
+   text: String,
+   img2: String
   },
 
 );
