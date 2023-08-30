@@ -2,7 +2,7 @@ const City = require("../models/City.model");
 const Place = require("../models/Place.model");
 const mangoose = require('mongoose');
 const ObjectId = mangoose.Types.ObjectId;
-
+const {isAuthenticated} = require('./../middleware/jwt.middleware')
 const router = require("express").Router()
 
 //router.use("/:cityId/places", require("./places.routes"))
@@ -15,7 +15,7 @@ router.get("/", async (req, res, next) => {
 	} catch (error) {
 		console.log(error)
 	}
-  });
+});
 
   router.get("/:cityId", async (req, res, next) => {
     const cityId = req.params.cityId;
@@ -53,7 +53,6 @@ router.get("/:cityId/places", async (req, res, next) => {
   }
     
 })
-
 
 
   module.exports = router;
