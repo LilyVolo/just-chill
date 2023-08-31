@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const ObjectId = mongoose.Types.ObjectId;
 const {isAuthenticated} = require('./../middleware/jwt.middleware')
 const router = require("express").Router()
-const Plan = require("../models/plan.model");
+const Plan = require("../models/Plan.model");
 
 
 router.get('/', isAuthenticated, async (req, res, next) => {
